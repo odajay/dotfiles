@@ -26,7 +26,6 @@ Virtual*
 .config
 .cups
 .docker
-.emacs.d
 .haiku
 .local
 .npm
