@@ -1,0 +1,99 @@
+# change layout of desktop
+ctrl + shift - q :  chunkc tiling::desktop --layout bsp
+ctrl + shift - w :  chunkc tiling::desktop --layout float
+ctrl + shift - f : chunkc tiling::desktop --layout monocle
+ctrl + shift - p : chunkc tiling::desktop --padding inc
+ctrl + shift + cmd - p : chunkc tiling::desktop --padding dec
+ctrl + shift + alt - a : chunkc tiling::desktop --toggle offset
+
+#au secours, new windows in new created area
+ctrl + shift - s :  chunkc tiling::desktop --create;\
+                    ids=$(chunkc tiling::query --desktops-for-monitor $(chunkc tiling::query --monitor-for-desktop $(chunkc tiling::query --desktop id)));\
+                    chunkc tiling::desktop --focus $(echo ${ids##* }) && open -na /Applications/Brave\ Browser.app/ --args --new-window 
+ctrl + shift - r :  chunkc tiling::desktop --annihilate
+ctrl + shift - t :  chunkc tiling::desktop --layout float; chunkc tiling::window --focus prev;\
+                    chunkc tiling::window --grid-layout 10:5:1:1:3:8;
+
+# change focus
+lalt - h : chunkc tiling::window --focus west
+lalt - n : chunkc tiling::window --focus south
+lalt - e : chunkc tiling::window --focus north
+lalt - i : chunkc tiling::window --focus east
+
+lalt - u : chunkc tiling::window --focus prev
+lalt - y : chunkc tiling::window --focus next
+
+# move focused window
+shift + lalt - h : chunkc tiling::window --warp west
+shift + lalt - n : chunkc tiling::window --warp south
+shift + lalt - e : chunkc tiling::window --warp north
+shift + lalt - i : chunkc tiling::window --warp east
+
+lalt - r : chunkc tiling::desktop --rotate 90
+
+# fast focus desktop
+lalt + shift - x : chunkc tiling::desktop --focus $(chunkc get _last_active_desktop)
+ctrl + lalt - 1 : chunkc tiling::desktop --focus prev
+ctrl + lalt - 2 : chunkc tiling::desktop --focus next
+lalt - 1 : chunkc tiling::desktop --focus 1
+lalt - 2 : chunkc tiling::desktop --focus 2
+lalt - 3 : chunkc tiling::desktop --focus 3
+lalt - 4 : chunkc tiling::desktop --focus 4
+lalt - 5 : chunkc tiling::desktop --focus 5
+lalt - 6 : chunkc tiling::desktop --focus 6
+
+# move focused container to workspace
+ctrl + lalt - m : chunkc tiling::window --send-to-desktop $(chunkc get _last_active_desktop)
+ctrl + lalt - u : chunkc tiling::window --send-to-desktop prev
+ctrl + lalt - y : chunkc tiling::window --send-to-desktop next
+ctrl + lalt - 1 : chunkc tiling::window --send-to-desktop 1
+ctrl + lalt - 2 : chunkc tiling::window --send-to-desktop 2
+ctrl + lalt - 3 : chunkc tiling::window --send-to-desktop 3
+ctrl + lalt - 4 : chunkc tiling::window --send-to-desktop 4
+ctrl + lalt - 5 : chunkc tiling::window --send-to-desktop 5
+ctrl + lalt - 6 : chunkc tiling::window --send-to-desktop 6
+
+# send window to desktop and follow focus
+shift + lalt - m : chunkc tiling:2:window --send-to-desktop $(chunkc get _last_active_desktop); chunkc tiling::desktop --focus $(chunkc get _last_active_desktop)
+shift + lalt - u : chunkc tiling::window --send-to-desktop prev; chunkc tiling::desktop --focus prev
+shift + lalt - y : chunkc tiling::window --send-to-desktop next; chunkc tiling::desktop --focus next
+shift + lalt - 1 : chunkc tiling::window --send-to-desktop 1; chunkc tiling::desktop --focus 1
+shift + lalt - 2 : chunkc tiling::window --send-to-desktop 2; chunkc tiling::desktop --focus 2
+shift + lalt - 4 : chunkc tiling::window --send-to-desktop 4; chunkc tiling::desktop --focus 4
+shift + lalt - 3 : chunkc tiling::window --send-to-desktop 3; chunkc tiling::desktop --focus 3
+shift + lalt - 5 : chunkc tiling::window --send-to-desktop 5; chunkc tiling::desktop --focus 5
+shift + lalt - 6 : chunkc tiling::window --send-to-desktop 6; chunkc tiling::desktop --focus 6
+
+# custom
+# application launch
+cmd + shift - return : open /Applications/iTerm.app
+cmd + ctrl + lalt - v : open /Applications/Visual\ Studio\ Code.app 
+cmd + ctrl + lalt - f : open /Applications/Firefox\ Developer\ Edition.app
+
+# equalize size of windows
+shift + lalt - 0 : chunkc tiling::desktop --equalize
+
+# swap windows
+cmd + lalt - h : chunkc tiling::window --swap west
+cmd + lalt - n : chunkc tiling::window --swap south
+cmd + lalt - e : chunkc tiling::window --swap north
+cmd + lalt - i : chunkc tiling::window --swap east
+
+
+# create desktop and follow focus
+shift + cmd - n : chunkc tiling::desktop --create;\
+                  ids=$(chunkc tiling::query --desktops-for-monitor $(chunkc tiling::query --monitor-for-desktop $(chunkc tiling::query --desktop id)));\
+                  chunkc tiling::desktop --focus $(echo ${ids##* })
+
+
+# increase region size
+shift + lalt - a : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge west
+shift + lalt - r : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge south
+shift + lalt - s : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge north
+shift + lalt - w : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge east
+
+# decrease region size
+shift + cmd - a : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge west
+shift + cmd - r : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge south
+shift + cmd - s : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge north
+shift + cmd - w : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge east
