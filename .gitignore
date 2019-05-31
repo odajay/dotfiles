@@ -1,0 +1,49 @@
+# Application Folders
+
+.DS_Store
+Applications
+Creative Cloud Files
+Desktop
+Documents
+Downloads
+Google Drive
+Library
+Movies
+Music
+Pictures
+Public
+RightFont
+Sites
+Software
+Virtual*
+
+# Things I might revisit
+
+.bash_sessions
+.bitbar
+.cache
+.composer
+.config
+.cups
+.docker
+.emacs.d
+.haiku
+.local
+.npm
+.nvm
+.phpls
+.polar
+.pylint.d
+.sip_v1
+.ssh
+.subversion
+.SwitchHosts
+.Trash
+.vscode
+.wine
+.zoomus
+.bash_history
+.CFUserTextEncoding
+.viminfo
+.gitconfig
+*.padl
