@@ -2,6 +2,8 @@
 
 .DS_Store
 Applications
+Books
+Prototypes
 Creative Cloud Files
 Desktop
 Documents
@@ -27,7 +29,6 @@ Virtual*
 # Things I might revisit
 
 .bash_sessions
-.bitbar
 .cache
 .composer
 .config
