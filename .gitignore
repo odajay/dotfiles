@@ -54,3 +54,5 @@ Virtual*
 .viminfo
 .gitconfig
 *.padl
+.yarnrc
+Icon
