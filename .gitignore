@@ -18,13 +18,31 @@ RightFont
 Sites
 Software
 Virtual*
+Code/
+Databases/
+Dropbox/
 
 # Emacs specifics
 
-.emacs.d/auto-save-list/
-.emacs.d/elpa/
-.emacs.d/projectile-bookmarks.eld
-.emacs.d/init.el~
+.emacs.d/*
+# .emacs.d/auto-save-list/
+# .emacs.d/elpa/
+# .emacs.d/projectile-bookmarks.eld
+# .emacs.d/init.el~
+
+# Zsh related
+
+.zlogin
+.zsh_history
+.zshenv
+.zshrc
+
+# Ruby related
+
+.gem/
+.bundle/
+.rvm/
+.rbenv/
 
 # Things I might revisit
 
@@ -56,3 +74,9 @@ Virtual*
 *.padl
 .yarnrc
 Icon
+.dropbox/
+.gnupg/
+prompt.prof
+.mkshrc
+.node-gyp/
+.profile
