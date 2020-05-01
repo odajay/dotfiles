@@ -21,6 +21,7 @@ Virtual*
 Code/
 Databases/
 Dropbox/
+Audio/
 
 # Emacs specifics
 
@@ -80,3 +81,41 @@ prompt.prof
 .mkshrc
 .node-gyp/
 .profile
+.Xauthority
+.adobe/
+.android/
+.babel.json
+.bashcf/
+.bookmarks-note.json
+.bookmarks.json
+.cargo/
+.devdocs/
+.eclipse/
+.emacs
+.expo/
+.httpie/
+.idlerc/
+.m2/
+.mplayer/
+.multirust
+.mysql_history
+.node_repl_history
+.npmrc
+.oracle_jre_usage/
+.p2/
+.path
+.psql_history
+.purple/
+.pyenv/
+.python_history
+.qutebrowser/
+.rustup/
+.shpotify.cfg
+.skhd
+.srl
+.todoist.cache.json
+.tooling/
+.uuid
+.vagrant.d/
+.w3m/
+.weechat/
