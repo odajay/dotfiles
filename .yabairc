@@ -45,6 +45,8 @@ yabai -m rule --add app=Tweetbot manage=off
 yabai -m rule --add app=Simulator manage=off
 yabai -m rule --add app='System Preferences' manage=off
 yabai -m rule --add app='licecap' manage=off
+yabai -m rule --add app='IINA' manage=off
+yabai -m rule --add app='TogglDesktop' manage=off
 
 # yabai -m rule --add app='VMware Fusion' manage=off
 
