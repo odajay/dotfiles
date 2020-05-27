@@ -1,1 +1,5 @@
-ctrl + alt - n : open -na /Applications/Notion.app
+# move window
+shift + ctrl - e : yabai -m window --warp east
+shift + ctrl - n : yabai -m window --warp west
+shift + ctrl - h : yabai -m window --swap north
+shift + ctrl - i : yabai -m window --swap south
