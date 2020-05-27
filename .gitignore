@@ -50,7 +50,6 @@ Audio/
 .bash_sessions
 .cache
 .composer
-.config
 .cups
 .docker
 .haiku

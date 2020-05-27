@@ -1,0 +1,116 @@
+<style>
+        body 
+        { 
+            background-color: #1E1E1E; 
+            color: #DCDCDC; 
+            font-family: Arial;
+        }
+        .verbose { color: #7871D0; }
+        .info { color: #3987D6; }
+        .warning { color: #DCDCDC; }
+        .error { color: #D69D85; }
+        div.log { font-family: monospace; }
+        div.log:hover { background-color: #333337; }
+        #controls label:hover { background: #203F60; }
+        table { border-collapse: collapse; }
+        td { 
+            border: white solid 1px; 
+            min-width: 5em;
+        }
+        </style>
+
+        <script type='text/javascript'>
+        document.addEventListener('DOMContentLoaded', function onReady(event) {
+            var checkboxes = document.querySelectorAll('#controls input[type="checkbox"]');
+            console.log('Ready!');
+            for (var i = 0; i < checkboxes.length; ++i) {
+                var box = checkboxes[i];
+                console.log('Adding event listener to checkbox');
+                box.addEventListener("change", function(event) {
+                    var checked = event.target.checked;
+                    var classToToggle = event.target.value;
+                    var eltsToToggle = document.querySelectorAll('div.' + classToToggle);
+                    for (var j = 0; j < eltsToToggle.length; ++j) {
+                        eltsToToggle[j].style.display = checked ? 'block' : 'none';
+                    }
+                });
+            }
+        });
+        </script>
+        
+<body>
+<h1>Log File</h1>
+<span style="font-family: &quot;Kootenay&quot;; color: #C9CB62;">
+Log started at 12:41:18 PM</span><hr/>
+
+        <div id='controls'>
+        <label for='check_verbose'><input type='checkbox' value='verbose'    id='check_verbose' checked> Toggle Verbose Messages</label><br/>
+        <label for='check_info'><input type='checkbox' value='info'    id='check_info' checked> Toggle Info</label><br/>
+        <label for='check_warning'><input type='checkbox' value='warning' id='check_warning' checked> Toggle Warnings</label><br/>
+        <label for='check_error'><input type='checkbox' value='error'   id='check_error' checked> Toggle Errors</label><br/>
+
+        <!-- Auto-Generated from Enum -->
+        <label for='check_NetTraffic' ><input type='checkbox' value='NetTraffic' id='check_NetTraffic' checked/> Toggle NetTraffic</label><br/><label for='check_SteamAPI' ><input type='checkbox' value='SteamAPI' id='check_SteamAPI' checked/> Toggle SteamAPI</label><br/><label for='check_NetworkInterfaceLayer' ><input type='checkbox' value='NetworkInterfaceLayer' id='check_NetworkInterfaceLayer' checked/> Toggle NetworkInterfaceLayer</label><br/><label for='check_ArenaEvents' ><input type='checkbox' value='ArenaEvents' id='check_ArenaEvents' checked/> Toggle ArenaEvents</label><br/><label for='check_CustomLobbyEvents' ><input type='checkbox' value='CustomLobbyEvents' id='check_CustomLobbyEvents' checked/> Toggle CustomLobbyEvents</label><br/><label for='check_Initialization' ><input type='checkbox' value='Initialization' id='check_Initialization' checked/> Toggle Initialization</label><br/><label for='check_FMOD' ><input type='checkbox' value='FMOD' id='check_FMOD' checked/> Toggle FMOD</label><br/>
+        </div>
+        <hr/>
+<div class="log info ">12:41:18 PM : Starting Main Loop</div>
+<div class="log info ">12:41:19 PM : PlatformLeaderboard.FindLeaderboards() - Searching for all leaderboard IDs</div>
+<div class="log info ">12:41:19 PM : ASSET HASH: 0</div>
+<div class="log info ">12:41:19 PM : BUILD ID: 1.0.8.0</div>
+<div class="log info ">12:41:19 PM : CROSSPLAY: NO</div>
+<div class="log error ">12:41:19 PM : <details><summary>/Users/jay/.config/ToothAndTail/Options.xml</summary><pre>System.IO.FileNotFoundException: Could not find file "/Users/jay/.config/ToothAndTail/Options.xml".
+File name: '/Users/jay/.config/ToothAndTail/Options.xml'
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0021a] in <1170fb08300b4d0db71c1d1db8555768>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share) [0x00000] in <1170fb08300b4d0db71c1d1db8555768>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in <1170fb08300b4d0db71c1d1db8555768>:0 
+  at ArmadaData.OfflineFilesystem.LoadXMLUserData[T] (System.String relativePath, System.String filename) [0x00024] in <67fde0f26db4424888b3460262147218>:0 </pre></details></div>
+<div class="log error ">12:41:19 PM :   <details style="display: inline-block;"><summary>Path '/Users/jay/.config/ToothAndTail/Options.xml' does not exist, cannot delete file</summary><pre>  at System.Environment.get_StackTrace () [0x00000] in <1170fb08300b4d0db71c1d1db8555768>:0 
+  at ArmadaDebug.DebugTools.OutputHtml (System.String str, ArmadaDebug.DebugTools+Categories cat, System.Boolean printStackTrace, ArmadaDebug.DebugTools+Importance importance) [0x00000] in <67fde0f26db4424888b3460262147218>:0 
+  at ArmadaDebug.DebugTools+LogOut.Emit[A] (System.String formatStr, A a) [0x00000] in <67fde0f26db4424888b3460262147218>:0 
+  at ArmadaData.OfflineFilesystem.DeleteFile (System.String relativePath, System.String filename) [0x00000] in <67fde0f26db4424888b3460262147218>:0 
+  at Armada.SessionIO.LoadOptions () [0x00000] in <67fde0f26db4424888b3460262147218>:0 
+  at Armada.GameWrapper..ctor (Armada.LobbyId connectLobby, System.Action`1[T] onStart) [0x00000] in <67fde0f26db4424888b3460262147218>:0 
+  at Armada.Core.Main.Start (System.String[] args, System.Action`1[T] onStart) [0x00000] in <67fde0f26db4424888b3460262147218>:0 
+  at Armada.Program.Main (System.String[] args) [0x00000] in <67fde0f26db4424888b3460262147218>:0 </pre></details></div>
+<div class="log info ">12:41:19 PM : IGLDevice: OpenGLDevice</div>
+<div class="log info ">12:41:19 PM : OpenGL Device: Intel(R) Iris(TM) Graphics 540</div>
+<div class="log info ">12:41:19 PM : OpenGL Driver: 2.1 INTEL-10.28.29</div>
+<div class="log info ">12:41:19 PM : OpenGL Vendor: Intel Inc.</div>
+<div class="log info ">12:41:19 PM : MojoShader Profile: glsl120</div>
+<div class="log info ">12:41:20 PM : FMOD_StudioSystem: system.init</div>
+<div class="log warning Initialization">12:41:22 PM : LocString enum Keys_ProcessKey is missing an entry!</div>
+<div class="log warning Initialization">12:41:22 PM : LocString enum Keys_OemCopy is missing an entry!</div>
+<div class="log warning Initialization">12:41:22 PM : LocString enum Keys_OemAuto is missing an entry!</div>
+<div class="log warning Initialization">12:41:22 PM : LocString enum Keys_OemEnlW is missing an entry!</div>
+<div class="log warning Initialization">12:41:22 PM : LocString enum Keys_Attn is missing an entry!</div>
+<div class="log warning Initialization">12:41:22 PM : LocString enum Keys_Crsel is missing an entry!</div>
+<div class="log warning Initialization">12:41:22 PM : LocString enum Keys_Exsel is missing an entry!</div>
+<div class="log warning Initialization">12:41:22 PM : LocString enum Keys_EraseEof is missing an entry!</div>
+<div class="log warning ">12:41:28 PM : Video /Users/jay/Library/Application Support/Steam/steamapps/common/ToothAndTail/ToothAndTail.app/Contents/MacOS/content/video/tnt_intro_master_ogv.ogv does not have an XNB file! Hacking Duration property!</div>
+<div class="log info ">12:41:28 PM : SessionIO::Load( filename= content/worlds/menubackground.xml )</div>
+<div class="log info ">12:41:28 PM : TitleSafeArea: {X:0 Y:0 Width:1440 Height:900}</div>
+<div class="log warning Initialization">12:41:30 PM : #------------------------- ELAPSED: 00:00:10.9186722 ------------------------#</div>
+<div class="log info ">12:41:30 PM : Found Daily leaderboards.</div>
+<div class="log info ">12:41:30 PM : Session Game Manager created. Starting game session.</div>
+<div class="log warning ">12:41:30 PM : GameWrapper.ClearPlayerInCharge called.</div>
+<div class="log info ">12:41:30 PM : GameStateShell.CleanupNotOnline called.</div>
+<div class="log warning NetworkInterfaceLayer">12:41:30 PM : SNI: Leave Lobby (0)</div>
+<div class="log warning NetworkInterfaceLayer">12:41:30 PM : SNI: Leave Lobby (0)</div>
+<div class="log info ">12:41:30 PM : Found AllTime leaderboards.</div>
+<div class="log warning ">12:41:56 PM : GameWrapper.SetPlayerInCharge(index) called.</div>
+<div class="log info ">12:41:56 PM : SaveData._Load() called.</div>
+<div class="log warning ">12:41:56 PM : SaveData._Load(); path '/Users/jay/.config/ToothAndTail/SaveData.xml' does not exist.</div>
+<div class="log info ">12:41:56 PM : ScreenMainMenu.Show called.</div>
+<div class="log warning ">12:42:33 PM : GameWrapper.ClearPlayerInCharge called.</div>
+<div class="log warning ">12:42:37 PM : GameWrapper.SetPlayerInCharge(index) called.</div>
+<div class="log info ">12:42:37 PM : SaveData._Load() called.</div>
+<div class="log warning ">12:42:37 PM : SaveData._Load(); path '/Users/jay/.config/ToothAndTail/SaveData.xml' does not exist.</div>
+<div class="log info ">12:42:37 PM : ScreenMainMenu.Show called.</div>
+<div class="log warning ">12:42:43 PM : GameWrapper.ClearPlayerInCharge called.</div>
+<div class="log warning ">12:42:50 PM : GameWrapper.SetPlayerInCharge(index) called.</div>
+<div class="log info ">12:42:50 PM : SaveData._Load() called.</div>
+<div class="log warning ">12:42:50 PM : SaveData._Load(); path '/Users/jay/.config/ToothAndTail/SaveData.xml' does not exist.</div>
+<div class="log info ">12:42:50 PM : ScreenMainMenu.Show called.</div>
+<div class="log warning NetworkInterfaceLayer">12:42:51 PM : SNI: Leave Lobby (0)</div>
+<div class="log warning NetworkInterfaceLayer">12:42:51 PM : SNI: Leave Lobby (0)</div>
